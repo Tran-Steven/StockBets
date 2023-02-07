@@ -6,10 +6,12 @@
     justify-content: center;
     background-color: black;
     color: white;
+    
 }
 
 .headerRightSide a {
     font-size: 18px;
+
 }
 
 .headerRightSide a:hover {
@@ -18,5 +20,11 @@
 
 .headerRightSide {
     position: relative;
-    right: 20%;
+    left: 30%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 33%;
+    height: 100%;
+
 }
