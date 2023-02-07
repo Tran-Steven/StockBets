@@ -1,0 +1,22 @@
+.header {
+    width: 100vw;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    color: white;
+}
+
+.headerRightSide a {
+    font-size: 18px;
+}
+
+.headerRightSide a:hover {
+    opacity: .8;
+}
+
+.headerRightSide {
+    position: relative;
+    right: 20%;
+}
