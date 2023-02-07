@@ -1,0 +1,14 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    text-align:center;
+    width: 33%;
+    
+}
+
+.cardBottom {
+    display: flex;
+    justify-content: space-evenly;
+    
+}

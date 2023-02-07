@@ -1,3 +1,19 @@
 .footer {
+    position: absolute;
+    width: 100vw;
+    height: 30vh;
+
+}
+
+.footer h3 {
+    margin-left: 5%;
+}
+
+.cardBox {
+    position: relative;
     display: flex;
+    top: 20%;
+    height: 50%;
+    justify-content: space-evenly;
+    width: inherit
 }

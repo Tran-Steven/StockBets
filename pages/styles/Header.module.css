@@ -11,7 +11,8 @@
 
 .headerRightSide a {
     font-size: 18px;
-
+    text-decoration: none;
+    cursor: pointer;
 }
 
 .headerRightSide a:hover {
