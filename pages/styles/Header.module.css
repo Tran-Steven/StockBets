@@ -1,0 +1,31 @@
+.header {
+    width: 100vw;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    color: white;
+    
+}
+
+.headerRightSide a {
+    font-size: 18px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.headerRightSide a:hover {
+    opacity: .8;
+}
+
+.headerRightSide {
+    position: relative;
+    left: 30%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 33%;
+    height: 100%;
+
+}
