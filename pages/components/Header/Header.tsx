@@ -11,7 +11,6 @@ export default function Header() {
         <a>LEAGUES</a>
         <div className="navlogin">
           <button className={styles.headerButton}>Register</button>
-
           <button className={styles.headerButton}>Login</button>
         </div>
       </div>
