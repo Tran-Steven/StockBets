@@ -26,6 +26,7 @@
   align-items: center;
   width: 33%;
   height: 100%;
+  font-weight: 600;
 }
 
 .headerButton {
@@ -35,4 +36,5 @@
   color: rgb(76, 75, 75);
   background-color: white;
   margin: 0.3rem;
+  font-weight: 600;
 }
