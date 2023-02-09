@@ -1,8 +1,7 @@
 .footer {
   padding: 1.5rem;
   position: absolute;
-  width: 100vw;
-  height: 30vh;
+  min-width: 100%;
 }
 
 .footer h3 {
@@ -16,4 +15,6 @@
   height: 50%;
   justify-content: space-evenly;
   width: inherit;
+  gap: 2rem;
+  margin-top: 1rem;
 }

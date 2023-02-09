@@ -21,7 +21,7 @@ export default function Footer() {
         <Card
           Name={"Zhizheng Wang"}
           email={"zhizhengwang28@gmail.com"}
-          linkedinLink={"www.linkedin.com/in/zhizheng-wang28"}
+          linkedinLink={"https://www.linkedin.com/in/zhizheng-wang28"}
           githubLink={"https://github.com/Zhizheng28"}
         />
       </div>
