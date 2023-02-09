@@ -1,31 +1,38 @@
 .header {
-    width: 100vw;
-    height: 10vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: black;
-    color: white;
-    
+  width: 100vw;
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  color: white;
 }
 
 .headerRightSide a {
-    font-size: 18px;
-    text-decoration: none;
-    cursor: pointer;
+  font-size: 18px;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .headerRightSide a:hover {
-    opacity: .8;
+  opacity: 0.8;
 }
 
 .headerRightSide {
-    position: relative;
-    left: 30%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 33%;
-    height: 100%;
+  position: relative;
+  left: 30%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 33%;
+  height: 100%;
+}
 
+.headerButton {
+  border: 1px solid rgb(167, 167, 167);
+  padding: 5px;
+  border-radius: 5px;
+  color: rgb(76, 75, 75);
+  background-color: white;
+  margin: 0.3rem;
 }

@@ -3,7 +3,7 @@ import Card from "../Cards/Card";
 
 export default function Footer() {
   return (
-    <div className={styles.footer}>
+    <footer className={styles.footer}>
       <h3>Collaborators</h3>
       <div className={styles.cardBox}>
         <Card
@@ -25,6 +25,6 @@ export default function Footer() {
           githubLink={"https://github.com/Zhizheng28"}
         />
       </div>
-    </div>
+    </footer>
   );
 }
