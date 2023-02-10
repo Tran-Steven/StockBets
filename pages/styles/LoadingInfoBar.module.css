@@ -1,0 +1,20 @@
+
+.loadingBar {
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    width: 70%;
+    padding-bottom: 20%;
+    height: 70%;
+    background-color: aliceblue;
+}
+
+
+.innerBarContent {
+    background-color: aqua;
+    position: relative;
+    width: 50%;
+    height: 50%;
+    padding-bottom: 20%;
+}

@@ -1,7 +1,13 @@
 .footer {
-  padding: 1.5rem;
-  position: absolute;
-  min-width: 100%;
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+    height: 30vh;
+
+/* padding: 1.5rem;
+   position: absolute;
+   min-width: 100%;
+*/
 }
 
 .footer h3 {
