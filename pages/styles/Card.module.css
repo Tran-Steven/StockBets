@@ -9,7 +9,9 @@
 .cardBottom {
   display: flex;
   justify-content: space-evenly;
+  filter: invert(1);
 }
+
 .svg {
   width: 35px;
   height: auto;
