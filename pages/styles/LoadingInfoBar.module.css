@@ -1,8 +1,15 @@
 
 .loadingBar svg {
+    position: relative;
+    margin: auto;
     fill: none;
-    stroke: black;
+    stroke: white;
     stroke-width: 1em;
+    width: 80%;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .loadingBar {
@@ -19,6 +26,8 @@
 .innerBarContent {
     background-color: aqua;
     position: relative;
-    width: 50%;
-    height: 50%;
+    width: 20%;
+    height: 20%;
+
+    margin: auto;
 }
