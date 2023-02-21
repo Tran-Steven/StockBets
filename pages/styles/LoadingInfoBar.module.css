@@ -1,9 +1,9 @@
-.loadingBar svg {
 
+.loadingBar svg {
 position: relative;
 fill: none;
 stroke: white;
-stroke-width: 1em;
+stroke-width: 2em;
 width: 80%;
 height: 80%;
 display: flex;
@@ -14,7 +14,6 @@ align-items: center;
 
 
 .loadingBar {
-
 position: relative;
 justify-content: center;
 align-items: center;
@@ -30,5 +29,4 @@ position: relative;
 width: 20%;
 height: 20%; 
 z-index: -1 ;
-
 }
