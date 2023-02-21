@@ -1,4 +1,5 @@
 import styles from "@styles/Header.module.css";
+import Link from "next/link";
 
 export default function Header() {
   return (
@@ -9,9 +10,12 @@ export default function Header() {
         <h2>Placeholder</h2>
       </div>
       <div className={styles.headerRightSide}>
-        <a>SOTD</a>
-        <a>ACCOUNT</a>
-        <a>LEAGUES</a>
+        <Link href="/">SOTD</Link>
+
+        <Link href="/account">ACCOUNT</Link>
+
+        <Link href="/leagues">LEAGUES</Link>
+
         <div className="navlogin">
           <button className={styles.headerButton}>REGISTER</button>
           <button className={styles.headerButton}>LOGIN</button>
