@@ -6,9 +6,10 @@
   justify-content: center;
   background-color: black;
   color: white;
+  padding: 1rem;
 }
 
-.headerRightSide a {
+.headerRightSide Link {
   /* font-size: 18px; */
   font-size: 1.2em;
   text-decoration: none;
@@ -16,19 +17,19 @@
   margin-right: 1em;
 }
 
-.headerRightSide a:hover {
+.headerRightSide Link:hover {
   opacity: 0.8;
 }
 
 .headerRightSide {
   position: relative;
-  left: 30%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 33%;
+  width: 40%;
   height: 100%;
   font-weight: 600;
+  float: right;
 }
 
 .headerButton {
@@ -50,4 +51,7 @@
 .navlogin {
   display: flex;
   justify-content: space-between;
+}
+.headerLeftSide {
+  width: 100%;
 }
