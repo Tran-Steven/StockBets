@@ -1,9 +1,9 @@
 .footer {
-  position: fixed;
-  bottom: 0%;
+  position: sticky;
+  bottom: 0;
   width: 100vw;
-  height: 30vh;
-
+  height: 20vh;
+  margin-top: 10%;
   /* padding: 1.5rem;
    position: absolute;
    min-width: 100%;
