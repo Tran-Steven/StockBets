@@ -1,5 +1,6 @@
 
 .loadingBar svg {
+
 position: relative;
 fill: none;
 stroke: white;
@@ -9,6 +10,7 @@ height: 80%;
 display: flex;
 justify-content: center;
 align-items: center;
+
 }
 
 
@@ -28,4 +30,6 @@ background-color: aqua;
 position: relative;
 width: 20%;
 height: 20%; 
+z-index: -1 ;
+
 }
