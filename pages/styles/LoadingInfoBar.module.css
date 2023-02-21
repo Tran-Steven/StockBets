@@ -1,3 +1,4 @@
+
 .loadingBar svg {
 position: relative;
 fill: none;
@@ -12,6 +13,7 @@ align-items: center;
 
 
 .loadingBar {
+
 position: relative;
 justify-content: center;
 align-items: center;
