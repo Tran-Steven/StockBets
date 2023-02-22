@@ -1,16 +1,19 @@
 
 .loadingBar svg {
+
 position: absolute;
 fill: none;
 stroke: white;
-stroke-width: 1em;
+stroke-width: 2em;
 width: 80%;
 height: 80%;
 display: flex;
 justify-content: center;
 align-items: center;
 overflow: visible;
+
 transform: rotate(135deg);
+
 }
 
 
@@ -29,4 +32,5 @@ background-color: aqua;
 position: relative;
 width: 20%;
 height: 20%; 
+
 }
