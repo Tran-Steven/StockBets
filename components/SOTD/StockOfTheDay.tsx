@@ -4,7 +4,7 @@ import LoadingInfobar from '../LoadingInfoBar/LoadingInfoBar'
 export default function StockofTheDay() {
     return (
         <div className={styles.mainContent}>
-            <LoadingInfobar />
+            <LoadingInfobar StockName={"APPL"} StartingPrice={155} CurrentPrice={140}/>
         </div>
     )
 
