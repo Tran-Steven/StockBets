@@ -1,6 +1,5 @@
 
-.loadingBar svg {
-
+.loadingBar svg, .progress {
 position: absolute;
 fill: none;
 stroke: white;
@@ -11,11 +10,13 @@ display: flex;
 justify-content: center;
 align-items: center;
 overflow: visible;
-
 transform: rotate(135deg);
-
 }
 
+.progress {
+    stroke: aquamarine;
+    transform: rotate(225deg);
+}
 
 .loadingBar {
 position: relative;
@@ -39,5 +40,5 @@ height: 20%;
 
 .innerBarContent h2 {
     margin-bottom: 35%;
-
 }
+

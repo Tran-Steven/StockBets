@@ -7,7 +7,7 @@ export default function Header() {
     <header className={styles.header}>
       {/* <image src="" alt="StockBets-logo" className="logo"/> */}
       <div className={styles.headerLeftSide}>
-        <h2>Placeholder</h2>
+        <h2>StockBets</h2>
       </div>
       <div className={styles.headerRightSide}>
         <Link href="/">SOTD</Link>
