@@ -6,17 +6,19 @@ export interface StockInfo {
   CurrentPrice: number;
 }
 
+let counter = 0;
 
 function calculatePercent() {
 
   let percentFill = 100;
-  let countDownDate = new Date("Mar 4, 2024 16:00:00").getTime();
+  let dateSet = new Date("Mar 4, 2024 16:00:00");
+  let countDownDate = new Date(dateSet.getDate()).getTime();
 
+  while(percentFill != 25) {
   const x = setInterval(function() {
 
   // Get today's date and time
   const now = new Date().getTime();  
-
 
   // Find the distance between now and the count down date
   let distance = countDownDate - now;
@@ -25,15 +27,23 @@ function calculatePercent() {
 
   const minutes = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60));
 
+  if (counter == 3600) {
+    percentFill--;
+    counter = 0;
+  }
+
   if (distance < 0 || minutes < 0) {
     clearInterval(x);
     percentFill = 25;
+    dateSet = new Date(dateSet.getDate() + 1);
   }
-  }, 1000);
+  counter++;
+  }, 1000);}
 
   return percentFill;
 
 }
+
 
 const Progress = ({percent = calculatePercent()}) => {
 
