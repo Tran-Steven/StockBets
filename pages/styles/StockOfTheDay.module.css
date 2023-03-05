@@ -1,9 +1,25 @@
 .mainContent {
-    width: 60vw;
-    height: 60vh;
+    width: 70vw;
+    height: 70vh;
     display: flex;
     justify-content: center;
     align-items: center;
     margin: auto;
+    flex-direction: column;
     margin-top: 10%;
 }
+
+.buttonOptions {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 15%;
+}
+
+.buttonOptions button {
+    padding: 5%;
+}
+
