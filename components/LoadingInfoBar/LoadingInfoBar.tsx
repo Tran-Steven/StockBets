@@ -6,6 +6,7 @@ export interface StockInfo {
   CurrentPrice: number;
 }
 
+
 function calculatePercent() {
   let percentFill = 100;
   let countDownDate = new Date("Mar 4, 2024 16:00:00").getTime();
@@ -52,9 +53,12 @@ export default function LoadingInfobar(prop: StockInfo) {
           {/* // <path d=" M 250 400 A 200 200 120 1 1 450 400" /> */}
         </svg>    
       <div className={styles.innerBarContent}>
-          <h2>{prop.StockName}</h2>
-          <p>Current Price: {prop.CurrentPrice}</p>
-          <p>Starting Price: {prop.StartingPrice}</p>
+
+
+          <h2>{prop.StockName} AAPL</h2>
+          <p>Current Price: 145{prop.CurrentPrice}</p>
+          <p>Starting Price: 120{prop.StartingPrice}</p>
+
      </div>
 
     </div>
