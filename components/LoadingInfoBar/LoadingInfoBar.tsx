@@ -7,28 +7,32 @@ export interface StockInfo {
 }
 
 function calculatePercent() {
-  let percentFill = 0;
+  let percentFill = 100;
   let countDownDate = new Date("Mar 4, 2024 16:00:00").getTime();
-    const x = setInterval(function() {
+
+  const x = setInterval(function() {
 
   // Get today's date and time
   const now = new Date().getTime();
-  
+
 
   // Find the distance between now and the count down date
   let distance = countDownDate - now;
 
   // Time calculations for days, hours, minutes and seconds
-  const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+  const minutes = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60));
 
+  if (distance < 0 || minutes < 0) {
+    clearInterval(x);
+    percentFill = 25;
+  }
   }, 1000);
 
+  return percentFill;
 
 }
 
-const Progress = ({percent = 50}) => {
+const Progress = ({percent = calculatePercent()}) => {
 const arc = 100;
 const percentNormalized = Math.min(Math.max(percent, 0), 100);
 const offset = arc - (percentNormalized / 100) * arc;
