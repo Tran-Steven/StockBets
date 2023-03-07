@@ -36,10 +36,6 @@ function calculateCount(): number {
   }
 }
 
-
-
-
-
 const Progress = ({percent = calculateCount()}) => { // implementation of how much of progresssvg covers the originial svg
 const arc = 100;
 const percentNormalized = Math.min(Math.max(percent, 0), 100);
