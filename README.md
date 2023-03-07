@@ -40,6 +40,6 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 ## Current Progress
 
 - [X] Basic Main Page Template set up
-- [ ] Need to ensure times are calclated properly
+- [X] Need to ensure times are calclated properly
 - [ ] Create a User register and login page
 - [ ] Connect all necessary info to the backend
