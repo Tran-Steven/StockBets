@@ -10,7 +10,7 @@ export default function Account() {
     <>
       <NavBar />
       <APC />
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }

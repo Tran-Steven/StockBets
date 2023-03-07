@@ -1,0 +1,17 @@
+.parent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.mainContent {
+    margin-top: 6%;
+    width: 40vw;
+    height: 80vh;
+}
+
+.placeHolder h2 {
+    padding-left: 6%;
+    margin-top: 7%;
+}
