@@ -19,6 +19,6 @@ function getStockData() {
   }
 }
 onmessage = function (message) {
-  setInterval(check, 1500 * 60);
-  this.setInterval(getStockData, 1500 * 60);
+  setInterval(check, 15000 * 60);
+  setInterval(getStockData, 300000);
 };
