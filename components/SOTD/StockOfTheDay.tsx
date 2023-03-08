@@ -1,11 +1,11 @@
 import styles from "@styles/StockofTheDay.module.css";
 import LoadingInfobar from "../LoadingInfoBar/LoadingInfoBar";
-const worker = new Worker("worker.tsx");
+// const worker = new Worker("worker.tsx");
 
-function isMarketOpen() {
-  worker.postMessage("Status");
-}
-isMarketOpen();
+// function isMarketOpen() {
+//   worker.postMessage("Status");
+// }
+// isMarketOpen();
 export default function StockofTheDay() {
   return (
     <>
