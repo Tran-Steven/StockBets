@@ -2,6 +2,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
     padding-left: 5%;
 }
 
@@ -13,6 +14,7 @@
 .playerCard h1 {
     margin-left: 4%;
 }
+
 
 .mainContent {
     margin-top: 6%;
@@ -51,4 +53,5 @@
 .mainContent ul {
     list-style-type: none;
 }
+
 
