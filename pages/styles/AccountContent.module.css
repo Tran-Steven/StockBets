@@ -2,6 +2,17 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
+    padding-left: 5%;
+}
+
+.playerCard {
+    display: flex;
+    align-items: center;
+}
+
+.playerCard h1 {
+    margin-left: 4%;
 }
 
 
@@ -11,7 +22,36 @@
     height: 80vh;
 }
 
-.placeHolder h2 {
-    padding-left: 6%;
-    margin-top: 7%;
+.listStyle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
+
+.socials {
+    display: flex;
+    justify-content: space-around;
+}
+
+.specs {
+    margin-right: 8%;
+}
+
+.specs li {
+    margin-top: 2%;
+}
+
+.lifetimeInfo li {
+    margin-top: 2%;
+}
+
+
+.mainContent h2 {
+    border: white solid;
+}
+
+.mainContent ul {
+    list-style-type: none;
+}
+
+

@@ -2,17 +2,35 @@ import style from "@styles/AccountContent.module.css"
 
 export default function AccountContent() {
   return (
-    <div className={style.placeHolder}>
-    <h2>Account Info</h2>
+
     <div className={style.parent}>
       <div className={style.mainContent}>
-          <ul>
-            <img src="" alt="Profile Picture"></img>
-            <li>Total Guesses</li>
-            <li>Guesses Correct (%) </li>
+         <h2>User Info</h2>
+         <div className={style.playerCard}>
+         <p>pfp placeholder</p>
+          <h1>UserName PlaceHolder</h1>
+          </div>
+          <div className={style.listStyle}>
+          <ul className={style.lifetimeInfo}>
+            <li>Memeber Since:</li>
+            <li>Lifetime Points:</li>
+            <li>Total Guesses:</li>           
+            <li>Guesses Correct (%) :</li>
+            <li>Leagues Won:</li>
+          </ul>
+          <ul className={style.specs}>
+            <li>Weekly Rank (as of _____)</li>
+            <li>Peak Rank:</li>
+            <li>Recent Ranks</li>
+          </ul>
+          </div>
+          <h3>Socials</h3>
+          <ul className={style.socials}>
+            <li>PlaceHolder</li>
+            <li>PlaceHolder</li>
           </ul>
       </div>
-    </div>
+
     </div>
   );
 }
