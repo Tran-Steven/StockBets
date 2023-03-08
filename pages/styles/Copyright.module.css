@@ -1,0 +1,14 @@
+.copyright {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  position: sticky;
+  margin-top: 7%;
+  bottom: 0;
+  width: 100%;
+}
+
+.copyright a {
+    text-decoration: none;
+    font-weight: bold;
+}
