@@ -2,7 +2,6 @@ import style from "@styles/AccountContent.module.css"
 
 export default function AccountContent() {
   return (
-
     <div className={style.parent}>
       <div className={style.mainContent}>
          <h2>User Info</h2>
@@ -30,7 +29,6 @@ export default function AccountContent() {
             <li>PlaceHolder</li>
           </ul>
       </div>
-
     </div>
   );
 }
