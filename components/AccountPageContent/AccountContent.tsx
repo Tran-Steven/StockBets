@@ -1,12 +1,11 @@
 import style from "@styles/AccountContent.module.css"
-import { stringify } from "querystring";
 
 export interface AccountInfo {
   Username: string;
   MemberSince: string;
   LifetimePoints: number;
   TotalGuesses: number;
-  LifetimeGuesses: number;
+  CorrectGuesses: number;
   LeaguesWon: number;
   WeeklyRank: string;
   PeakRank: string;
@@ -14,10 +13,10 @@ export interface AccountInfo {
 }
 
 function calculateCorrect(TotalGuesses: number, CorrectGuesses: number) {
-    return CorrectGuesses / TotalGuesses * 100;
+    return (CorrectGuesses / TotalGuesses * 100).toFixed();
 }
 
-export default function AccountContent() {
+export default function AccountContent({TotalGuesses, CorrectGuesses}: AccountInfo) {
   return (
     <div className={style.parent}>
       <div className={style.mainContent}>
@@ -31,7 +30,7 @@ export default function AccountContent() {
             <li>Memeber Since:</li>
             <li>Lifetime Points:</li>
             <li>Total Guesses:</li>           
-            <li>Guesses Correct (%) : 0</li>
+            <li>Guesses Correct (%) : {calculateCorrect(TotalGuesses, CorrectGuesses)}</li>
             <li>Leagues Won:</li>
           </ul>
           <ul className={style.specs}>
