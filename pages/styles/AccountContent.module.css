@@ -2,7 +2,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-left: 5%;
 }
 
 .playerCard {
@@ -18,6 +17,8 @@
     margin-top: 6%;
     width: 40vw;
     height: 80vh;
+    border: white solid;
+    padding: 2% 4%;
 }
 
 .listStyle {
