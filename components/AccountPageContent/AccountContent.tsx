@@ -17,27 +17,55 @@ function calculateCorrect(TotalGuesses: number, CorrectGuesses: number) {
     return CorrectGuesses / TotalGuesses * 100;
 }
 
-export default function AccountContent() {
+
+export interface AccountInfo {
+  Username: string;
+  MemberSince: string;
+  LifetimePoints: number;
+  TotalGuesses: number;
+  CorrectGuesses: number;
+  LeaguesWon: number;
+  WeeklyRank: string;
+  PeakRank: string;
+  RecentRank: string;
+}
+
+function calculateCorrect(TotalGuesses: number, CorrectGuesses: number) {
+    return (CorrectGuesses / TotalGuesses * 100).toFixed();
+}
+
+function pastWeekRank() {
+  let curDate = new Date();
+  let dayNumber = curDate.getDay();
+  let lastWeekDate = new Date();
+
+  lastWeekDate.setDate(curDate.getDate() - dayNumber);
+
+  return (lastWeekDate.getMonth() + 1)+ '/' + lastWeekDate.getDate() + '/' + lastWeekDate.getFullYear();
+}
+
+export default function AccountContent({Username, MemberSince, LifetimePoints, LeaguesWon, TotalGuesses, CorrectGuesses, WeeklyRank, PeakRank, RecentRank}: AccountInfo) {
+
   return (
     <div className={style.parent}>
       <div className={style.mainContent}>
          <h2>User Info</h2>
          <div className={style.playerCard}>
          <p>pfp placeholder</p>
-          <h1>UserName PlaceHolder</h1>
+          <h1>{Username}holder</h1>
           </div>
           <div className={style.listStyle}>
           <ul className={style.lifetimeInfo}>
-            <li>Memeber Since:</li>
-            <li>Lifetime Points:</li>
-            <li>Total Guesses:</li>           
-            <li>Guesses Correct (%) : 0</li>
-            <li>Leagues Won:</li>
+            <li>Memeber Since: {MemberSince}</li>
+            <li>Lifetime Points: {LifetimePoints}</li>
+            <li>Total Guesses: {TotalGuesses}</li>           
+            <li>Guesses Correct (%) : {calculateCorrect(TotalGuesses, CorrectGuesses)}</li>
+            <li>Leagues Won: {LeaguesWon}</li>
           </ul>
           <ul className={style.specs}>
-            <li>Weekly Rank (as of _____)</li>
-            <li>Peak Rank:</li>
-            <li>Recent Ranks</li>
+            <li>Weekly Rank: {WeeklyRank}</li>
+            <li>Peak Rank: {PeakRank}</li>
+            <li>Recent Rank (as of {pastWeekRank()}): {RecentRank}</li>
           </ul>
           </div>
           <h3>Socials</h3>
@@ -51,7 +79,6 @@ export default function AccountContent() {
 }
 
 // bottom code maybe used for a pfp functionality
-// will also need to figure out what the hell to do with this accound info page
 
 // import Image from 'next/image';
 
