@@ -6,47 +6,37 @@ export interface StockInfo {
   CurrentPrice: number;
 }
 
-let counter = 0;
+function calculateCount(): number {
+  const now = new Date();
+  const dayOfWeek = now.getDay();
+  const hour = now.getHours();
+  const minute = now.getMinutes();
 
-function calculatePercent() {
+  // Check if current time is on a weekday between 9:00 am and 4:00 pm
+  if (dayOfWeek >= 1 && dayOfWeek <= 5 && hour >= 9 && hour < 16) {
+    // Calculate minutes since 9:00 am
+    const minutesSinceStart = (hour - 9) * 60 + minute;
 
-  let percentFill = 100;
-  let dateSet = new Date("Mar 4, 2024 16:00:00");
-  let countDownDate = new Date(dateSet.getDate()).getTime();
+    // Determine the number of 5.2 minute intervals that have passed since 9:00 am
+    const intervalsSinceStart = Math.floor(minutesSinceStart / 5.2);
 
-  while(percentFill != 25) {
-  const x = setInterval(function() {
+    // Determine the next 5.2 minute interval and wait until that time
+    const nextInterval = (intervalsSinceStart + 1) * 5.2;
+    const waitTime = (nextInterval - minutesSinceStart) * 60 * 1000;
+    setTimeout(calculateCount, waitTime);
 
-  // Get today's date and time
-  const now = new Date().getTime();  
-
-  // Find the distance between now and the count down date
-  let distance = countDownDate - now;
-
-  // Time calculations for days, hours, minutes and seconds
-
-  const minutes = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60));
-
-  if (counter == 3600) {
-    percentFill--;
-    counter = 0;
+    // Calculate the count value
+    let count = 100 - intervalsSinceStart;
+    if (count < 25) {
+      count = 25;
+    }
+    return count;
+  } else {
+    return 25;
   }
-
-  if (distance < 0 || minutes < 0) {
-    clearInterval(x);
-    percentFill = 25;
-    dateSet = new Date(dateSet.getDate() + 1);
-  }
-  counter++;
-  }, 1000);}
-
-  return percentFill;
-
 }
 
-
-const Progress = ({percent = calculatePercent()}) => {
-
+const Progress = ({percent = calculateCount()}) => { // implementation of how much of progresssvg covers the originial svg
 const arc = 100;
 const percentNormalized = Math.min(Math.max(percent, 0), 100);
 const offset = arc - (percentNormalized / 100) * arc;
@@ -63,14 +53,13 @@ export default function LoadingInfobar(prop: StockInfo) {
         <svg viewBox="0 0 500 500">
           <circle cx="250" cy="250" r="250" pathLength="100" strokeDasharray="75 25" strokeLinecap="round"/>
           <Progress />
-          {/* // <path d=" M 250 400 A 200 200 120 1 1 450 400" /> */}
         </svg>    
       <div className={styles.innerBarContent}>
 
 
-          <h2>{prop.StockName} AAPL</h2>
-          <p>Current Price: 145{prop.CurrentPrice}</p>
-          <p>Starting Price: 120{prop.StartingPrice}</p>
+          <h2>{prop.StockName}</h2>
+          <p>Current Price: {prop.CurrentPrice}</p>
+          <p>Starting Price: {prop.StartingPrice}</p>
 
      </div>
 

@@ -1,5 +1,6 @@
 import APC from "@components/AccountPageContent/AccountContent";
 import NavBar from "@components/Header/Header";
+import Copyright from "@components/Copyright/Copyright";
 import Footer from "@components/Footer/Footer";
 import Image from "next/image";
 import { Inter } from "@next/font/google";
@@ -10,7 +11,7 @@ export default function Account() {
     <>
       <NavBar />
       <APC />
-      <Footer />
+      <Copyright />
     </>
   );
 }

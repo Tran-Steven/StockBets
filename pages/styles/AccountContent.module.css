@@ -1,0 +1,55 @@
+.parent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.playerCard {
+    display: flex;
+    align-items: center;
+}
+
+.playerCard h1 {
+    margin-left: 4%;
+}
+
+.mainContent {
+    margin-top: 6%;
+    width: 40vw;
+    height: 80vh;
+    border: white solid;
+    padding: 2% 4%;
+}
+
+.listStyle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.socials {
+    display: flex;
+    justify-content: space-around;
+}
+
+.specs {
+    margin-right: 8%;
+}
+
+.specs li {
+    margin-top: 2%;
+}
+
+.lifetimeInfo li {
+    margin-top: 2%;
+}
+
+
+.mainContent h2 {
+    border: white solid;
+}
+
+.mainContent ul {
+    list-style-type: none;
+}
+

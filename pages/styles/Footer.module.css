@@ -2,16 +2,12 @@
   position: sticky;
   bottom: 0;
   width: 100vw;
-  height: 20vh;
+  height: 40vh;
   margin-top: 10%;
-  /* padding: 1.5rem;
-   position: absolute;
-   min-width: 100%;
-*/
 }
 
 .footer h3 {
-  margin-left: 5%;
+  padding-left: 5%;
   font-size: 1.8rem;
 }
 

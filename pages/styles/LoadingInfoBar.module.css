@@ -14,7 +14,7 @@ transform: rotate(135deg);
 }
 
 .progress {
-    stroke: aquamarine;
+    stroke: #00ff00;
     transform: rotate(225deg);
 }
 
@@ -41,4 +41,3 @@ height: 20%;
 .innerBarContent h2 {
     margin-bottom: 35%;
 }
-
