@@ -1,4 +1,22 @@
 import style from "@styles/AccountContent.module.css"
+import { stringify } from "querystring";
+
+export interface AccountInfo {
+  Username: string;
+  MemberSince: string;
+  LifetimePoints: number;
+  TotalGuesses: number;
+  LifetimeGuesses: number;
+  LeaguesWon: number;
+  WeeklyRank: string;
+  PeakRank: string;
+  RecentRank: string;
+}
+
+function calculateCorrect(TotalGuesses: number, CorrectGuesses: number) {
+    return CorrectGuesses / TotalGuesses * 100;
+}
+
 
 export interface AccountInfo {
   Username: string;
@@ -27,6 +45,7 @@ function pastWeekRank() {
 }
 
 export default function AccountContent({Username, MemberSince, LifetimePoints, LeaguesWon, TotalGuesses, CorrectGuesses, WeeklyRank, PeakRank, RecentRank}: AccountInfo) {
+
   return (
     <div className={style.parent}>
       <div className={style.mainContent}>
