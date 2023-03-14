@@ -6,23 +6,6 @@ export interface AccountInfo {
   MemberSince: string;
   LifetimePoints: number;
   TotalGuesses: number;
-  LifetimeGuesses: number;
-  LeaguesWon: number;
-  WeeklyRank: string;
-  PeakRank: string;
-  RecentRank: string;
-}
-
-function calculateCorrect(TotalGuesses: number, CorrectGuesses: number) {
-    return CorrectGuesses / TotalGuesses * 100;
-}
-
-
-export interface AccountInfo {
-  Username: string;
-  MemberSince: string;
-  LifetimePoints: number;
-  TotalGuesses: number;
   CorrectGuesses: number;
   LeaguesWon: number;
   WeeklyRank: string;
@@ -59,7 +42,7 @@ export default function AccountContent({Username, MemberSince, LifetimePoints, L
             <li>Memeber Since: {MemberSince}</li>
             <li>Lifetime Points: {LifetimePoints}</li>
             <li>Total Guesses: {TotalGuesses}</li>           
-            <li>Guesses Correct (%) : {calculateCorrect(TotalGuesses, CorrectGuesses)}</li>
+            <li>Guesses Correct (%) {calculateCorrect(TotalGuesses, CorrectGuesses)}</li>
             <li>Leagues Won: {LeaguesWon}</li>
           </ul>
           <ul className={style.specs}>
