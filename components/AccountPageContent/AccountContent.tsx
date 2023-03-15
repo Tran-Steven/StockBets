@@ -16,11 +16,14 @@ export interface AccountInfo {
 
 // https://css-tricks.com/snippets/javascript/random-hex-color/ 
 
-// function setDefaultBG(Username : string) {
-//   const randomColor = Math.floor(Math.random()*16777215).toString(16);
-//   const defaultHolder = document.getElementById('test')
-//   document.defaultHolder.style.backgroundColor = "#"
-// }
+
+function setDefaultBG(Username : string) {
+   const randomColor = Math.floor(Math.random()*16777215).toString(16);
+   const defaultHolder = document.getElementById("test");
+  if (defaultHolder) {
+    defaultHolder.style.backgroundColor = "#" + randomColor;
+  }
+}
 
 
 function calculateCorrect(TotalGuesses: number, CorrectGuesses: number) {
@@ -37,6 +40,11 @@ function pastWeekRank() {
   return (lastWeekDate.getMonth() + 1)+ '/' + lastWeekDate.getDate() + '/' + lastWeekDate.getFullYear();
 }
 
+function getFirstLetter(Username: string) {
+  const letter = Username.charAt(0);
+  return letter;
+}
+
 export default function AccountContent({Username, MemberSince, LifetimePoints, LeaguesWon, TotalGuesses, CorrectGuesses, WeeklyRank, PeakRank, RecentRank}: AccountInfo) {
 
   return (
@@ -45,7 +53,14 @@ export default function AccountContent({Username, MemberSince, LifetimePoints, L
          <h2>User Info</h2>
          <div className={style.playerCard}>
           <div className={style.default} id="test">
-            <button className={style.colorChanger}></button>
+
+            <button className={style.colorChanger} onClick={() => setDefaultBG(Username)}>
+              <p className={style.intial}>{getFirstLetter("Steven")}</p>
+            </button>
+            {/* <div className={style.colorMessage}>
+              <p>Click me to change your profile color!</p>
+            </div> */}
+
           </div>
           <h1>{Username}StevenTran</h1>
           </div>
