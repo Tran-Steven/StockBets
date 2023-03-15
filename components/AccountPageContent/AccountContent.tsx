@@ -13,6 +13,7 @@ export interface AccountInfo {
   RecentRank: string;
 }
 
+
 // https://css-tricks.com/snippets/javascript/random-hex-color/ 
 
 // function setDefaultBG(Username : string) {
@@ -20,6 +21,7 @@ export interface AccountInfo {
 //   const defaultHolder = document.getElementById('test')
 //   document.defaultHolder.style.backgroundColor = "#"
 // }
+
 
 function calculateCorrect(TotalGuesses: number, CorrectGuesses: number) {
   return (CorrectGuesses / TotalGuesses * 100).toFixed();
