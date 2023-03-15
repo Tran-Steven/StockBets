@@ -34,7 +34,7 @@ export default function AccountContent({Username, MemberSince, LifetimePoints, L
       <div className={style.mainContent}>
          <h2>User Info</h2>
          <div className={style.playerCard}>
-          <img src="/Users/owen/StudioProjects/StockBets/assets/profile-icon-9.png" alt="pfp holder"></img>
+          <img src="../assets/profile-icon-9.png" alt=""></img>
           <h1>{Username}holder</h1>
           </div>
           <div className={style.listStyle}>

@@ -14,6 +14,14 @@
     margin-left: 4%;
 }
 
+.playerCard img {
+    background-color: grey;
+}
+
+.playerCard img:hover {
+    opacity: .75;
+}
+
 .mainContent {
     margin-top: 6%;
     width: 40vw;
