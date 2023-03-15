@@ -20,7 +20,9 @@ export default function Header() {
           <Link href="/register">
           <button className={styles.headerButton}>REGISTER</button>
           </Link>
+          <Link href="/login">
           <button className={styles.headerButton}>LOGIN</button>
+          </Link>
         </div>
       </div>
     </header>

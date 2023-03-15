@@ -60,7 +60,6 @@ export default function AccountContent({Username, MemberSince, LifetimePoints, L
             {/* <div className={style.colorMessage}>
               <p>Click me to change your profile color!</p>
             </div> */}
-
           </div>
           <h1>{Username}StevenTran</h1>
           </div>
