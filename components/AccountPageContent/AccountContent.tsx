@@ -13,8 +13,18 @@ export interface AccountInfo {
   RecentRank: string;
 }
 
+
+// https://css-tricks.com/snippets/javascript/random-hex-color/ 
+
+// function setDefaultBG(Username : string) {
+//   const randomColor = Math.floor(Math.random()*16777215).toString(16);
+//   const defaultHolder = document.getElementById('test')
+//   document.defaultHolder.style.backgroundColor = "#"
+// }
+
+
 function calculateCorrect(TotalGuesses: number, CorrectGuesses: number) {
-    return (CorrectGuesses / TotalGuesses * 100).toFixed();
+  return (CorrectGuesses / TotalGuesses * 100).toFixed();
 }
 
 function pastWeekRank() {
@@ -34,8 +44,10 @@ export default function AccountContent({Username, MemberSince, LifetimePoints, L
       <div className={style.mainContent}>
          <h2>User Info</h2>
          <div className={style.playerCard}>
-          <img src="/Users/owen/StudioProjects/StockBets/assets/profile-icon-9.png" alt="pfp holder"></img>
-          <h1>{Username}holder</h1>
+          <div className={style.default} id="test">
+            <button className={style.colorChanger}></button>
+          </div>
+          <h1>{Username}StevenTran</h1>
           </div>
           <div className={style.listStyle}>
           <ul className={style.lifetimeInfo}>

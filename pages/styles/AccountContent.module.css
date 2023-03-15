@@ -14,6 +14,10 @@
     margin-left: 4%;
 }
 
+.default:hover {
+    opacity: .9;
+}
+
 .mainContent {
     margin-top: 6%;
     width: 40vw;
@@ -63,10 +67,18 @@
     list-style-type: none;
 }
 
-.playerCard img {
+.default {
     border-radius: 50%;
     width: 7em;
-    object-fit: cover;
     height: 7em;
     margin-left: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.default button {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
 }
