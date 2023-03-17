@@ -1,5 +1,6 @@
 import styles from "@styles/StockofTheDay.module.css";
 import LoadingInfobar from "../LoadingInfoBar/LoadingInfoBar";
+import LeaderBoard from "@components/LeaderBoard/LeaderBoard";
 // const worker = new Worker("worker.tsx");
 
 // function isMarketOpen() {
@@ -20,6 +21,7 @@ export default function StockofTheDay() {
           <button>Sell</button>
         </div>
       </div>
+      <LeaderBoard />
     </>
   );
 }
