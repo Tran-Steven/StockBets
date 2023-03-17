@@ -20,6 +20,7 @@ function setDefaultBG(Username : string) {
   if (defaultHolder) {
     defaultHolder.style.backgroundColor = "#" + randomColor;
   }
+  // store current color into db for current player
 }
 
 
