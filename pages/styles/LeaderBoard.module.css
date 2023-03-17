@@ -1,0 +1,8 @@
+.parent {
+    position: absolute;
+    top: 25%;
+    right: 7.5%;
+    width: 20vw;
+    height: 60vh;
+    border: 1px white solid;
+}

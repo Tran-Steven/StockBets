@@ -1,5 +1,4 @@
 import style from "@styles/AccountContent.module.css"
-import { stringify } from "querystring";
 
 export interface AccountInfo {
   Username: string;
@@ -13,9 +12,7 @@ export interface AccountInfo {
   RecentRank: string;
 }
 
-
 // https://css-tricks.com/snippets/javascript/random-hex-color/ 
-
 
 function setDefaultBG(Username : string) {
    const randomColor = Math.floor(Math.random()*16777215).toString(16);
@@ -86,32 +83,3 @@ export default function AccountContent({Username, MemberSince, LifetimePoints, L
     </div>
   );
 }
-
-// bottom code maybe used for a pfp functionality
-
-// import Image from 'next/image';
-
-// const ProfilePic = () => {
-//   const [imgSrc, setImgSrc] = useState('/placeholder.jpg');
-
-//   const handleFileChange = (e) => {
-//     const file = e.target.files[0];
-//     if (file) {
-//       const reader = new FileReader();
-//       reader.addEventListener('load', () => {
-//         setImgSrc(reader.result);
-//       });
-//       reader.readAsDataURL(file);
-//     }
-//   };
-
-//   return (
-//     <div className="profile-pic">
-//       <Image src={imgSrc} alt="Profile Picture" width={100} height={100} className="rounded-full" />
-//       <label htmlFor="profile-pic-input">
-//         <i className="fa fa-camera"></i>
-//       </label>
-//       <input type="file" id="profile-pic-input" accept="image/*" onChange={handleFileChange} />
-//     </div>
-//   );
-// };
