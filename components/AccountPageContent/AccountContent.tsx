@@ -25,7 +25,7 @@ function setDefaultBG(Username : string) {
 
 
 function calculateCorrect(TotalGuesses: number, CorrectGuesses: number) {
-  return (CorrectGuesses / TotalGuesses * 100).toFixed();
+  return (CorrectGuesses / TotalGuesses * 100).toFixed(1);
 }
 
 function pastWeekRank() {
@@ -51,7 +51,6 @@ export default function AccountContent({Username, MemberSince, LifetimePoints, L
          <h2>User Info</h2>
          <div className={style.playerCard}>
           <div className={style.default} id="test">
-
             <button className={style.colorChanger} onClick={() => setDefaultBG(Username)}>
               <p className={style.intial}>{getFirstLetter("Steven")}</p>
             </button>
@@ -75,11 +74,11 @@ export default function AccountContent({Username, MemberSince, LifetimePoints, L
             <li>Recent Rank (as of {pastWeekRank()}): {RecentRank}</li>
           </ul>
           </div>
-          <h3>Socials</h3>
+          {/* <h3>Socials</h3>
           <ul className={style.socials}>
             <li>PlaceHolder</li>
             <li>PlaceHolder</li>
-          </ul>
+          </ul> */}
       </div>
     </div>
   );

@@ -8,6 +8,7 @@
     display: flex;
     align-items: center;
     height: 25%;
+    margin-top: 10%;
 }
 
 .playerCard h1 {
@@ -29,7 +30,7 @@
 .listStyle {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     height: 40%;
 }
 
@@ -40,15 +41,15 @@
 }
 
 .specs {
-    margin-right: 5%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     height: 62%;
+    width: 40%;
 }
 
 .lifetimeInfo {
-    margin-left: 2%;
+
 }
 
 .intial {
