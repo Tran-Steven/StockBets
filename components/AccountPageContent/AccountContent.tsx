@@ -68,11 +68,13 @@ export default function AccountContent({Username, MemberSince, LifetimePoints, L
             <li>Guesses Correct (%) {calculateCorrect(TotalGuesses, CorrectGuesses)}</li>
             <li>Leagues Won: {LeaguesWon}</li>
           </ul>
-          <ul className={style.specs}>
-            <li>Weekly Rank: {WeeklyRank}</li>
-            <li>Peak Rank: {PeakRank}</li>
-            <li>Recent Rank (as of {pastWeekRank()}): {RecentRank}</li>
-          </ul>
+            <div className={style.specTest}>
+            <ul className={style.specs}>
+              <li>Weekly Rank {WeeklyRank}</li>
+              <li>Peak Rank {PeakRank}</li>
+              <li>Recent Rank (as of {pastWeekRank()}) {RecentRank}</li>
+            </ul>
+            </div>
           </div>
           {/* <h3>Socials</h3>
           <ul className={style.socials}>

@@ -4,8 +4,8 @@ import Link from "next/link";
 export default function Header() {
   return (
     /**Add media query to create hamburger menu starting at approx 1284width */
+    <>
     <header className={styles.header}>
-      {/* <image src="" alt="StockBets-logo" className="logo"/> */}
       <div className={styles.headerLeftSide}>
         <h2>StockBets</h2>
       </div>
@@ -26,5 +26,6 @@ export default function Header() {
         </div>
       </div>
     </header>
+    </>
   );
 }

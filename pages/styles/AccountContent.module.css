@@ -21,17 +21,18 @@
 
 .mainContent {
     margin-top: 6%;
-    width: 40vw;
-    height: 80vh;
+    width: 60vw;
+    height: 90vh;
     border: white solid;
-    padding: 2% 4%;
+    padding: 4% 4% 10% 4%;
 }
 
 .listStyle {
     display: flex;
-    align-items: center;
+    align-items: left;
+    flex-direction: column;
     justify-content: space-around;
-    height: 40%;
+    height: 55%;
 }
 
 .socials {
@@ -42,14 +43,14 @@
 
 .specs {
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 62%;
-    width: 40%;
+    flex-direction: row;
+    justify-content: space-evenly;
+    height: 60%;
+    width: 100%;
 }
 
-.lifetimeInfo {
-
+.specTest {
+    margin-top: 6%;
 }
 
 .intial {
