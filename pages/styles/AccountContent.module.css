@@ -7,12 +7,17 @@
 .playerCard {
     display: flex;
     align-items: center;
+    text-align: center;
     height: 25%;
-    margin-top: 10%;
+    margin-bottom: 20%;
 }
 
 .playerCard h1 {
     margin-left: 4%;
+}
+
+.playerCard h3 {
+    margin-left: 20%;
 }
 
 .default:hover {
@@ -69,8 +74,9 @@
     margin-top: 3%;
 }
 
+
 .listStyle ul li {
-    font-size: 1.1em;
+    font-size: 1.2em;
 }
 
 .mainContent h2 {

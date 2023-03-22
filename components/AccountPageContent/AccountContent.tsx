@@ -12,6 +12,10 @@ export interface AccountInfo {
   RecentRank: string;
 }
 
+// ranks: (1 - 3) Bronze, Silver, Gold, Plat, Diamond, Masters (top 50?)
+
+// implement a line chart with npm install chart.js (later)
+
 // https://css-tricks.com/snippets/javascript/random-hex-color/ 
 
 function setDefaultBG(Username : string) {
@@ -48,7 +52,7 @@ export default function AccountContent({Username, MemberSince, LifetimePoints, L
   return (
     <div className={style.parent}>
       <div className={style.mainContent}>
-         <h2>User Info</h2>
+         {/* <h2>User Info</h2> */}
          <div className={style.playerCard}>
           <div className={style.default} id="test">
             <button className={style.colorChanger} onClick={() => setDefaultBG(Username)}>
@@ -59,10 +63,11 @@ export default function AccountContent({Username, MemberSince, LifetimePoints, L
             </div> */}
           </div>
           <h1>{Username}StevenTran</h1>
+          {/* maybe for titles too, add this for filler <h3>&#127881; Beta Tester &#127881;</h3> */}
           </div>
           <div className={style.listStyle}>
           <ul className={style.lifetimeInfo}>
-            <li>Memeber Since: {MemberSince}</li>
+            <li>Member Since: {MemberSince}</li>
             <li>Lifetime Points: {LifetimePoints}</li>
             <li>Total Guesses: {TotalGuesses}</li>           
             <li>Guesses Correct (%) {calculateCorrect(TotalGuesses, CorrectGuesses)}</li>
@@ -76,11 +81,6 @@ export default function AccountContent({Username, MemberSince, LifetimePoints, L
             </ul>
             </div>
           </div>
-          {/* <h3>Socials</h3>
-          <ul className={style.socials}>
-            <li>PlaceHolder</li>
-            <li>PlaceHolder</li>
-          </ul> */}
       </div>
     </div>
   );
