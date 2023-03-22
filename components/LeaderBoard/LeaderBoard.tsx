@@ -27,14 +27,17 @@ function leaderBoardType() {
 
 export default function LeaderBoard() {
     return (
-        <div className={style.parent}>
-            <div>
-                {userInsert()}
-                {userInsert()}
-                {userInsert()}
-                {userInsert()}
-                {userInsert()}
-            </div> 
+        <div className={style.test}>
+            <h2>Global Leaderboard</h2>
+            <div className={style.parent}>
+                <div>
+                    {userInsert()}
+                    {userInsert()}
+                    {userInsert()}
+                    {userInsert()}
+                    {userInsert()}
+                </div> 
+            </div>
         </div>
     )
 }

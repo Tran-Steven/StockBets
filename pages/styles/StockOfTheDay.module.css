@@ -2,7 +2,7 @@
     width: 65vw;
     height: 70vh;
     display: flex;
-    justify-content: baseline;
+    justify-content: center;
     align-items: center;
     margin-right: 80%;
     flex-direction: column;
