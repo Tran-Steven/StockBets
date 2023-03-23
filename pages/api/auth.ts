@@ -1,7 +1,7 @@
 import NextAuth from 'next-auth';
 import Providers from 'next-auth/providers';
 import bcrypt from 'bcryptjs';
-import { connection } from '../../../database';
+import { connection } from '../../sb-be/server';
 import { Account } from '../../sb-be/models/accountModel';
 
 export default NextAuth({
