@@ -16,6 +16,7 @@
     "incremental": true,
     "baseUrl": ".",
     "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
     "paths": {
       "@styles/*": ["./pages/styles/*"],
       "@assets/*": ["./assets/*"],
