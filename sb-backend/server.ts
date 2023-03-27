@@ -1,11 +1,11 @@
 import { Pool } from 'pg';
 
 const pool = new Pool({
-  host: 'ruby.db.elephantsql.com',
+  host: 'localhost',
   port: 5432,
-  database: 'svkoitau',
-  user: 'svkoitau',
-  password: 'MiSUukp8gbg_FUIB7qXN2TyJILAsHYlP',
+  database: 'stockbets',
+  user: 'owen',
+  password: 'himama123',
 });
 
 pool.query('SELECT NOW()', (err, res) => {
