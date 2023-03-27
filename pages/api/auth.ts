@@ -1,8 +1,8 @@
 import NextAuth from 'next-auth';
 import Providers from 'next-auth/providers';
 import bcrypt from 'bcryptjs';
-import AppDataSource from '../../sb-be/server';
-import { Account } from '../../sb-be/models/accountModel';
+import AppDataSource from '../../sb-backend/server';
+import { Account } from '../../sb-backend/models/accountModel';
 
 export default NextAuth({
   providers: [
