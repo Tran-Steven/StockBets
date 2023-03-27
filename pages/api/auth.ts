@@ -1,7 +1,7 @@
 import NextAuth from 'next-auth';
 import Providers from 'next-auth/providers';
 import bcrypt from 'bcryptjs';
-import { connection } from '../../sb-be/server';
+import AppDataSource from '../../sb-be/server';
 import { Account } from '../../sb-be/models/accountModel';
 
 export default NextAuth({
@@ -12,11 +12,11 @@ export default NextAuth({
         username: { label: 'Username', type: 'text', placeholder: 'username' },
         password: { label: 'Password', type: 'password' },
       },
-      async authorize(credentials) {
+      async authorize(credentials: any ) { // any typing for temp fix, def needs change for better later on...
         const { username, password } = credentials;
 
         // Find the user with the given username in the database
-        const userRepository = (await connection).getRepository(Account);
+        const userRepository = (await AppDataSource).getRepository(Account);
         const user = await userRepository.findOne({ where: { username } });
 
         if (!user) {
