@@ -1,81 +1,87 @@
 import style from "@styles/AccountContent.module.css"
-import { stringify } from "querystring";
 
 export interface AccountInfo {
   Username: string;
   MemberSince: string;
   LifetimePoints: number;
   TotalGuesses: number;
-  LifetimeGuesses: number;
+  CorrectGuesses: number;
   LeaguesWon: number;
   WeeklyRank: string;
   PeakRank: string;
   RecentRank: string;
 }
 
-function calculateCorrect(TotalGuesses: number, CorrectGuesses: number) {
-    return CorrectGuesses / TotalGuesses * 100;
+// ranks: (1 - 3) Bronze, Silver, Gold, Plat, Diamond, Masters (top 50?)
+
+// implement a line chart with npm install chart.js (later)
+
+// https://css-tricks.com/snippets/javascript/random-hex-color/ 
+
+function setDefaultBG(Username : string) {
+   const randomColor = Math.floor(Math.random()*16777215).toString(16);
+   const defaultHolder = document.getElementById("test");
+  if (defaultHolder) {
+    defaultHolder.style.backgroundColor = "#" + randomColor;
+  }
+  // store current color into db for current player
 }
 
-export default function AccountContent() {
+
+function calculateCorrect(TotalGuesses: number, CorrectGuesses: number) {
+  return (CorrectGuesses / TotalGuesses * 100).toFixed(1);
+}
+
+function pastWeekRank() {
+  let curDate = new Date();
+  let dayNumber = curDate.getDay();
+  let lastWeekDate = new Date();
+
+  lastWeekDate.setDate(curDate.getDate() - dayNumber);
+
+  return (lastWeekDate.getMonth() + 1)+ '/' + lastWeekDate.getDate() + '/' + lastWeekDate.getFullYear();
+}
+
+function getFirstLetter(Username: string) {
+  const letter = Username.charAt(0);
+  return letter;
+}
+
+export default function AccountContent({Username, MemberSince, LifetimePoints, LeaguesWon, TotalGuesses, CorrectGuesses, WeeklyRank, PeakRank, RecentRank}: AccountInfo) {
+
   return (
     <div className={style.parent}>
       <div className={style.mainContent}>
-         <h2>User Info</h2>
+         {/* <h2>User Info</h2> */}
          <div className={style.playerCard}>
-         <p>pfp placeholder</p>
-          <h1>UserName PlaceHolder</h1>
+          <div className={style.default} id="test">
+            <button className={style.colorChanger} onClick={() => setDefaultBG(Username)}>
+              <p className={style.intial}>{getFirstLetter("Steven")}</p>
+            </button>
+            {/* <div className={style.colorMessage}>
+              <p>Click me to change your profile color!</p>
+            </div> */}
+          </div>
+          <h1>{Username}StevenTran</h1>
+          {/* maybe for titles too, add this for filler <h3>&#127881; Beta Tester &#127881;</h3> */}
           </div>
           <div className={style.listStyle}>
           <ul className={style.lifetimeInfo}>
-            <li>Memeber Since:</li>
-            <li>Lifetime Points:</li>
-            <li>Total Guesses:</li>           
-            <li>Guesses Correct (%) : 0</li>
-            <li>Leagues Won:</li>
+            <li>Member Since: {MemberSince}</li>
+            <li>Lifetime Points: {LifetimePoints}</li>
+            <li>Total Guesses: {TotalGuesses}</li>           
+            <li>Guesses Correct (%) {calculateCorrect(TotalGuesses, CorrectGuesses)}</li>
+            <li>Leagues Won: {LeaguesWon}</li>
           </ul>
-          <ul className={style.specs}>
-            <li>Weekly Rank (as of _____)</li>
-            <li>Peak Rank:</li>
-            <li>Recent Ranks</li>
-          </ul>
+            <div className={style.specTest}>
+            <ul className={style.specs}>
+              <li>Weekly Rank {WeeklyRank}</li>
+              <li>Peak Rank {PeakRank}</li>
+              <li>Recent Rank (as of {pastWeekRank()}) {RecentRank}</li>
+            </ul>
+            </div>
           </div>
-          <h3>Socials</h3>
-          <ul className={style.socials}>
-            <li>PlaceHolder</li>
-            <li>PlaceHolder</li>
-          </ul>
       </div>
     </div>
   );
 }
-
-// bottom code maybe used for a pfp functionality
-// will also need to figure out what the hell to do with this accound info page
-
-// import Image from 'next/image';
-
-// const ProfilePic = () => {
-//   const [imgSrc, setImgSrc] = useState('/placeholder.jpg');
-
-//   const handleFileChange = (e) => {
-//     const file = e.target.files[0];
-//     if (file) {
-//       const reader = new FileReader();
-//       reader.addEventListener('load', () => {
-//         setImgSrc(reader.result);
-//       });
-//       reader.readAsDataURL(file);
-//     }
-//   };
-
-//   return (
-//     <div className="profile-pic">
-//       <Image src={imgSrc} alt="Profile Picture" width={100} height={100} className="rounded-full" />
-//       <label htmlFor="profile-pic-input">
-//         <i className="fa fa-camera"></i>
-//       </label>
-//       <input type="file" id="profile-pic-input" accept="image/*" onChange={handleFileChange} />
-//     </div>
-//   );
-// };

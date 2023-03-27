@@ -7,43 +7,77 @@
 .playerCard {
     display: flex;
     align-items: center;
+    text-align: center;
+    height: 25%;
+    margin-bottom: 20%;
 }
 
 .playerCard h1 {
     margin-left: 4%;
 }
 
+.playerCard h3 {
+    margin-left: 20%;
+}
+
+.default:hover {
+    opacity: .83;
+}
+
 .mainContent {
     margin-top: 6%;
-    width: 40vw;
-    height: 80vh;
+    width: 60vw;
+    height: 90vh;
     border: white solid;
-    padding: 2% 4%;
+    padding: 4% 4% 10% 4%;
 }
 
 .listStyle {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    align-items: left;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 55%;
 }
 
 .socials {
     display: flex;
     justify-content: space-around;
+    margin-top: 4%;
 }
 
 .specs {
-    margin-right: 8%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    height: 60%;
+    width: 100%;
 }
 
-.specs li {
-    margin-top: 2%;
+.specTest {
+    margin-top: 6%;
+}
+
+.intial {
+    visibility: visible;
+    opacity: 1;
+    font-size: 3em;
+}
+
+.colorMessage {
+    font-size: 70%;
+    visibility:hidden;
+    flex-wrap: wrap;
 }
 
 .lifetimeInfo li {
-    margin-top: 2%;
+    margin-top: 3%;
 }
 
+
+.listStyle ul li {
+    font-size: 1.2em;
+}
 
 .mainContent h2 {
     border: white solid;
@@ -53,3 +87,21 @@
     list-style-type: none;
 }
 
+.default {
+    border-radius: 50%;
+    width: 7em;
+    height: 7em;
+    margin-left: 5%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+.default button {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0);
+    border: none;
+}

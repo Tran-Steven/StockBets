@@ -6,6 +6,8 @@
     "skipLibCheck": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
+    "types": [
+    ],
     "noEmit": true,
     "esModuleInterop": true,
     "module": "esnext",
@@ -15,6 +17,8 @@
     "jsx": "preserve",
     "incremental": true,
     "baseUrl": ".",
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
     "paths": {
       "@styles/*": ["./pages/styles/*"],
       "@assets/*": ["./assets/*"],
