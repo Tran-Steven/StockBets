@@ -1,0 +1,35 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+  // poolConfig = {
+  //   max: 10,
+  //   min: 2,
+  //   idleTimeoutMillis: 30000,
+  //   connectionTimeoutMillis: 2000,
+  // }
+}
+
+model AccountStats {
+  username String @id @db.VarChar(50)
+  lifetimepoints Int
+  totalguesses Int
+  correctguesses Int
+  leagueswon Int
+  weeklyrank String @db.VarChar(12)
+  peakrank String @db.VarChar(12)
+  recentrank String @db.VarChar(12)
+}
+
+model Logincreds {
+  id Int @id
+  username String @db.VarChar(50)
+  password String @db.VarChar(50)
+  email String @db.VarChar(50)
+}
