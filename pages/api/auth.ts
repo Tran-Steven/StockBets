@@ -1,46 +1,48 @@
-import NextAuth from 'next-auth';
-import Providers from 'next-auth/providers';
-import bcrypt from 'bcryptjs';
-import AppDataSource from '../../sb-be/server';
-import { Account } from '../../sb-be/models/accountModel';
 
-export default NextAuth({
-  providers: [
-    Providers.Credentials({
-      name: 'Credentials',
-      credentials: {
-        username: { label: 'Username', type: 'text', placeholder: 'username' },
-        password: { label: 'Password', type: 'password' },
-      },
-      async authorize(credentials: any ) { // any typing for temp fix, def needs change for better later on...
-        const { username, password } = credentials;
+// import NextAuth from 'next-auth';
+// import Providers from 'next-auth/providers';
+// import bcrypt from 'bcryptjs';
+// import AppDataSource from '../../sb-backend/server';
+// import { Account } from '../../sb-backend/models/accountModel';
 
-        // Find the user with the given username in the database
-        const userRepository = (await AppDataSource).getRepository(Account);
-        const user = await userRepository.findOne({ where: { username } });
+// export default NextAuth({
+//   providers: [
+//     Providers.Credentials({
+//       name: 'Credentials',
+//       credentials: {
+//         username: { label: 'Username', type: 'text', placeholder: 'username' },
+//         password: { label: 'Password', type: 'password' },
+//       },
+//       async authorize(credentials: any ) { // any typing for temp fix, def needs change for better later on...
+//         const { username, password } = credentials;
 
-        if (!user) {
-          throw new Error('Invalid username or password');
-        }
+//         // Find the user with the given username in the database
+//         const userRepository = (await AppDataSource).getRepository(Account);
+//         const user = await userRepository.findOne({ where: { username } });
 
-        // Compare the given password with the user's hashed password
-        const passwordMatches = await bcrypt.compare(password, user.password);
+//         if (!user) {
+//           throw new Error('Invalid username or password');
+//         }
 
-        if (!passwordMatches) {
-          throw new Error('Invalid username or password');
-        }
+//         // Compare the given password with the user's hashed password
+//         const passwordMatches = await bcrypt.compare(password, user.password);
 
-        // If the password matches, return the user object
-        return user;
-      },
-    }),
-  ],
+//         if (!passwordMatches) {
+//           throw new Error('Invalid username or password');
+//         }
 
-  session: {
-    jwt: true,
-  },
+//         // If the password matches, return the user object
+//         return user;
+//       },
+//     }),
+//   ],
 
-  jwt: {
-    secret: process.env.JWT_SECRET,
-  },
-});
+//   session: {
+//     jwt: true,
+//   },
+
+//   jwt: {
+//     secret: process.env.JWT_SECRET,
+//   },
+// });
+
