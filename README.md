@@ -41,5 +41,12 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 - [X] Basic Main Page Template set up
 - [X] Need to ensure times are calclated properly
-- [ ] Create a User register and login page
+- [X] Create a User register and login page
 - [ ] Connect all necessary info to the backend
+
+## Text Stack
+- TypeScript
+- Next.js
+- Prisma
+- Postgresql
+- NextAuth.js
