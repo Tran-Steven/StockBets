@@ -1,18 +1,22 @@
 import NextAuth from 'next-auth';
-import Providers from 'next-auth/providers';
 import bcrypt from 'bcryptjs';
 import AppDataSource from '../../sb-be/server';
 import { Account } from '../../sb-be/models/accountModel';
+import CredentialsProvider from "next-auth/providers/credentials";
+
+
+// when deploying, use NEXTAUTH_URL=https://example.com 
+// When deploying your site set the NEXTAUTH_URL environment variable to the canonical URL of the website.
 
 export default NextAuth({
   providers: [
-    Providers.Credentials({
+    CredentialsProvider ({
       name: 'Credentials',
       credentials: {
         username: { label: 'Username', type: 'text', placeholder: 'username' },
         password: { label: 'Password', type: 'password' },
       },
-      async authorize(credentials: any ) { // any typing for temp fix, def needs change for better later on...
+      async authorize(credentials, req ) { // any typing for temp fix, def needs change for better later on...
         const { username, password } = credentials;
 
         // Find the user with the given username in the database
