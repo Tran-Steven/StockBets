@@ -6,6 +6,9 @@ import axios from "axios";
 import Random from "@assets/Random";
 import React, { useState, useEffect } from "react";
 
+// reccomended to put this in the back, since this will be unique for each user so to make sure not
+// every user gets a different stock on refresh. -Alex
+
 export default function StockofTheDay() {
   let date = new Date();
   let marketStatus = false;
@@ -13,6 +16,8 @@ export default function StockofTheDay() {
   let stockRefreshDate;
   const tickerJSON = f500ticker;
   const [ticker, setTicker] = useState("");
+
+  let test = tickerJSON[Random()].Symbol.valueOf();
 
   function check() {
     if (date.getUTCHours() >= 14 && date.getUTCMinutes() >= 30) {
@@ -24,7 +29,8 @@ export default function StockofTheDay() {
   }
 
   const setRandTicker = function () {
-    setTicker(tickerJSON[Random()].Symbol.valueOf());
+    setTicker(test);
+  return test
   };
 
   async function getStockData() {
@@ -32,11 +38,12 @@ export default function StockofTheDay() {
       if (ticker == "" || date.getUTCHours() == 14) {
         setRandTicker();
       }
+      console.log(ticker);
       const url =
         "https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=" +
-        { ticker } +
+        test +
         "&interval=1min" +
-        `&apikey=${process.env.STOCK_KEY}`;
+        `&apikey=9DOD0J7CPMP232GK`;  // ${process.env.STOCK_KEY}
       axios.get(url).then(function (res) {
         StockData = res;
       });
