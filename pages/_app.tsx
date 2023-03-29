@@ -3,8 +3,9 @@ import type { AppProps } from "next/app";
 import { SessionProvider } from "next-auth/react"
 
 export default function App({ Component, pageProps: {userSession, ...restOfProps}}: AppProps) {
-  return
+  return (
   <SessionProvider session={userSession}>
-  <Component {...restOfProps} />;
+    <Component {...restOfProps} />;
   </SessionProvider> 
+  )
 }

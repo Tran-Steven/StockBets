@@ -10,15 +10,14 @@
   border-bottom: white 1px solid;
 }
 
-.headerRightSide Link {
-  /* font-size: 18px; */
+.headerLinks {
   font-size: 1.2em;
   text-decoration: none;
   cursor: pointer;
-  margin-right: 1em;
+  margin-right: 1rem;
 }
 
-.headerRightSide Link:hover {
+.headerLinks:hover {
   opacity: 0.8;
 }
 
@@ -55,4 +54,19 @@
 }
 .headerLeftSide {
   width: 100%;
+}
+
+@media (max-width: 950px) {
+  .headerLeftSide {
+    display: none;
+  }
+  .headerRightSide {
+    justify-content: center;
+  }
+}
+@media (max-width: 380px) {
+  .headerLinks {
+    font-size: 1em;
+    margin-right: 0.5em;
+  }
 }
