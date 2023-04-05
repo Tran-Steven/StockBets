@@ -1,6 +1,6 @@
 import styles from "@styles/StockofTheDay.module.css";
 import LoadingInfobar from "../LoadingInfoBar/LoadingInfoBar";
-import LeaderBoard from "@components/LeaderBoard/LeaderBoard";
+// import LeaderBoard from "@components/LeaderBoard/LeaderBoard";
 import f500ticker from "@assets/f500tickers.json";
 import axios from "axios";
 import Random from "@assets/Random";
