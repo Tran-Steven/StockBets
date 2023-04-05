@@ -1,52 +1,113 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<a name="readme-top"></a>
 
-## Getting Started
+<div align="center">
 
-First, run the development server:
+  <h3 align="center">StockBets</h3>
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+  <p align="center">
+    Daily Stocks, Daily Bets.
+    <br />
+    <br />
+    <br />
+    <a href="https://github.com/Tran-Steven/StockBets">View Demo</a>
+    ·
+    <a href="https://github.com/Tran-Steven/StockBets/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/Tran-Steven/StockBets/issues">Request Feature</a>
+  </p>
+</div>
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+<!-- TABLE OF CONTENTS -->
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about">About</a>
+      <ul>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+    <li><a href="#contributing">Contributing</a></li>
+    <li><a href="#license">License</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#acknowledgments">Acknowledgments</a></li>
+  </ol>
+</details>
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+<!-- ABOUT  -->
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+## About
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+[StockBets](https://github.com/Tran-Steven/StockBets/)
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+StockBets is a website similar to paper trading, in where it does not use real money, but you can bet daily to see if a stock's price will rise or fall.
 
-## Learn More
+The website only will pick from a list of the Fortune 500 companies randomly each day.
 
-To learn more about Next.js, take a look at the following resources:
+### Planned implementations:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Adding a leaderboard
+- Fantasy football-esce gamemode
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### Built With
 
-## Deploy on Vercel
+- [![React][react.js]][react-url]
+- [![Next][next.js]][next-url]
+- [![PostgreSQL][postgresql]][postgresql-url]
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+<!-- CONTRIBUTING -->
 
-## Current Progress
+## Contributing
 
-- [X] Basic Main Page Template set up
-- [X] Need to ensure times are calclated properly
-- [X] Create a User register and login page
-- [ ] Connect all necessary info to the backend
+### Have a suggestion or found an issue?
 
-## Text Stack
-- TypeScript
-- Next.js
-- Prisma
-- Postgresql
-- NextAuth.js
+Please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/Feature`)
+3. Commit your Changes (`git commit -m 'Adding Feature'`)
+4. Push to the Branch (`git push origin feature/Feature`)
+5. Open a Pull Request
+
+<!-- LICENSE -->
+
+## License
+
+Distributed under the Apache 2.0 License. See `LICENSE.md` for more information.
+
+<!-- CONTACT -->
+
+## Contact Information
+
+Steven Tran
+
+[LinkedIn](https://www.linkedin.com/in/steven-tran-26735b206/) | stevenntran@outlook.com
+
+Owen Na
+
+[LinkedIn](https://www.linkedin.com/in/owen-na-634247236/) | newseoul1302@gmail.com
+
+<!-- ACKNOWLEDGMENTS -->
+
+## Acknowledgments
+
+-TBA
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- MARKDOWN LINKS & IMAGES -->
+
+[issues-shield]: https://img.shields.io/github/issues/Tran-Steven/StockBets
+[issues-url]: https://github.com/Tran-Steven/StockBets/issues
+[license-shield]: https://img.shields.io/github/license/Tran-Steven/StockBets
+[license-url]: https://github.com/Tran-Steven/StockBets/blob/main/LICENSE.md
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
+[linkedin-url]: https://www.linkedin.com/in/steven-tran-26735b206/
+[next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
+[next-url]: https://nextjs.org/
+[react.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
+[react-url]: https://reactjs.org/
+[postgresql]: https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white
+[postgresql-url]: https://www.postgresql.org/
