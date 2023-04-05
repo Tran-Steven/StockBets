@@ -29,14 +29,16 @@ export default NextAuth({
       });
 
       if (!user) {
-        throw new Error('Invalid username or password');
+        return null;
+        // throw new Error('Invalid username or password');
       }
 
       // Compare the given password with the user's hashed password
       const passwordMatches = await bcrypt.compare(password, user.password);
 
       if (!passwordMatches) {
-        throw new Error('Invalid username or password');
+        return null;
+        // throw new Error('Invalid username or password');
       }
 
         // If the password matches, return the user object

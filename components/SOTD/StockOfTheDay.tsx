@@ -43,7 +43,7 @@ export default function StockofTheDay() {
         "https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=" +
         test +
         "&interval=1min" +
-        `&apikey=9DOD0J7CPMP232GK`;  // ${process.env.STOCK_KEY}
+        `&apikey=${process.env.STOCK_KEY}`;  // ${process.env.STOCK_KEY}
       axios.get(url).then(function (res) {
         StockData = res;
       });

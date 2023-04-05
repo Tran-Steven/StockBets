@@ -17,19 +17,19 @@ datasource db {
 }
 
 model AccountStats {
-  username String @id @db.VarChar(50)
+  username       String @id @db.VarChar(50)
   lifetimepoints Int
-  totalguesses Int
+  totalguesses   Int
   correctguesses Int
-  leagueswon Int
-  weeklyrank String @db.VarChar(12)
-  peakrank String @db.VarChar(12)
-  recentrank String @db.VarChar(12)
+  leagueswon     Int
+  weeklyrank     String @db.VarChar(12)
+  peakrank       String @db.VarChar(12)
+  recentrank     String @db.VarChar(12)
 }
 
 model Logincreds {
-  id Int @id @default(autoincrement())
+  id       Int    @id @default(autoincrement())
   username String @db.VarChar(50)
   password String @db.VarChar(50)
-  email String @db.VarChar(50)
+  email    String @db.VarChar(50)
 }

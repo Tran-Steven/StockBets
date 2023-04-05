@@ -7,7 +7,7 @@ import { useState } from 'react'
 
 export default function Login() {
 
-    const {data: session} = useSession({required: true});
+    const {data: session} = useSession();
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const loading = session === null;
@@ -17,7 +17,7 @@ export default function Login() {
     e.preventDefault();
     }
 
-    if (loading || !session) {
+    // if (loading || !session) {
         if (!session) {
         return (
             <div>
@@ -32,11 +32,15 @@ export default function Login() {
                 </form>
                 <Copyright />
             </div>
-    )} else {
+    )} else if (loading) {
+        return (
+            <div>Loading...</div>
+        )
         // loading aninmation???
     }
-} else {
+ else {
         router.push('./account');
+        return null;
     // User is authenticated, redirect to accountStats
 } 
 }
