@@ -59,17 +59,16 @@ export default function StockofTheDay() {
   return (
     <div className={styles.mainContainer}>
       <div className={styles.mainContent}>
+        <div className={styles.buttonOptions}>
+          <button>Buy</button>
+          <button>Sell</button>
+        </div>
         <LoadingInfobar
           StockName={ticker}
           StartingPrice={140}
           CurrentPrice={140}
         />
-        <div className={styles.buttonOptions}>
-          <button>Buy</button>
-          <button>Sell</button>
-        </div>
       </div>
-      <LeaderBoard />
     </div>
   );
 }

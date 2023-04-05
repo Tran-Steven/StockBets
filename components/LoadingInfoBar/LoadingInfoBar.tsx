@@ -36,30 +36,45 @@ function calculateCount(): number {
   }
 }
 
-const Progress = ({percent = calculateCount()}) => { // implementation of how much of progresssvg covers the originial svg
-const arc = 100;
-const percentNormalized = Math.min(Math.max(percent, 0), 100);
-const offset = arc - (percentNormalized / 100) * arc;
+const Progress = ({ percent = calculateCount() }) => {
+  // implementation of how much of progresssvg covers the originial svg
+  const arc = 100;
+  const percentNormalized = Math.min(Math.max(percent, 0), 100);
+  const offset = arc - (percentNormalized / 100) * arc;
   return (
     <svg viewBox="0 0 500 500">
-      <circle className={styles.progress} cx="250" cy="250" r="250" pathLength="100" strokeDasharray={`${offset} ${arc}`} strokeLinecap="round"/>
+      <circle
+        className={styles.progress}
+        cx="250"
+        cy="250"
+        r="250"
+        pathLength="100"
+        strokeDasharray={`${offset} ${arc}`}
+        strokeLinecap="round"
+      />
     </svg>
-  )
-}
+  );
+};
 
 export default function LoadingInfobar(prop: StockInfo) {
   return (
     <div className={styles.loadingBar}>
-        <svg viewBox="0 0 500 500">
-          <circle cx="250" cy="250" r="250" pathLength="100" strokeDasharray="75 25" strokeLinecap="round"/>
-          <Progress />
-        </svg>    
+      <svg viewBox="0 0 500 500">
+        <circle
+          cx="250"
+          cy="250"
+          r="250"
+          pathLength="100"
+          strokeDasharray="75 25"
+          strokeLinecap="round"
+        />
+        <Progress />
+      </svg>
       <div className={styles.innerBarContent}>
-          <h2>{prop.StockName}</h2>
-          <p>Current Price: {prop.CurrentPrice}</p>
-          <p>Starting Price: {prop.StartingPrice}</p>
-     </div>
-
+        <h2>{prop.StockName}</h2>
+        <p>Current Price: {prop.CurrentPrice}</p>
+        <p>Starting Price: {prop.StartingPrice}</p>
+      </div>
     </div>
   );
 }
