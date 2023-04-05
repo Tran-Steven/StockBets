@@ -1,26 +1,34 @@
 .mainContent {
-    width: 65vw;
-    height: 70vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-right: 80%;
-    flex-direction: column;
-    margin-top: 5%;
+  width: 100%;
+  height: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 80%;
+  flex-direction: column;
+  margin-top: 5%;
 }
-
+.mainContainer {
+  overflow-y: hidden;
+  height: 100vh;
+}
 .buttonOptions {
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-evenly;
-    width: 100%;
-    height: 15%;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+  height: 15%;
 }
 
 .buttonOptions button {
-    padding: 3% 6.5%;
-    font-size: 1.2em;
+  padding: 2% 3.5%;
+  font-size: 1em;
+  z-index: 2;
 }
-
+@media (max-width: 400px) {
+  .buttonOptions {
+    margin-bottom: -100rem;
+  }
+}
