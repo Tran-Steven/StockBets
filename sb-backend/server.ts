@@ -1,5 +1,8 @@
 import { Pool } from 'pg';
 
+const express = require('express')
+const app = express();
+
 const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
   ssl: {
@@ -7,7 +10,13 @@ const pool = new Pool({
   }
 });
 
-pool.query('SELECT NOW()', (err, res) => {
+pool.connect()
+.then(
+  app.listen(3001, () => {console.log("server is live.")})
+)
+.catch(() => console.log("test"))
+
+pool.query('SELECT NOW()', (err: Error, res: any) => {
   console.log(err, res);
   pool.end();
 });

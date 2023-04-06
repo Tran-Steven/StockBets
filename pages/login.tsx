@@ -7,7 +7,7 @@ import { useState } from 'react'
 
 export default function Login() {
 
-    const {data: session} = useSession();
+    const {data: session} = useSession({required: true});
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const loading = session === null;
