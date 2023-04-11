@@ -7,6 +7,9 @@ import { PrismaClient } from "@prisma/client"
 // when deploying, use NEXTAUTH_URL=https://example.com 
 // When deploying your site set the NEXTAUTH_URL environment variable to the canonical URL of the website.
 
+
+
+
 const prisma = new PrismaClient();
 
 export default NextAuth({
