@@ -55,13 +55,12 @@ import NextAuth, {NextAuthOptions} from 'next-auth';
 import bcrypt from 'bcryptjs';
 import CredentialsProvider from "next-auth/providers/credentials";
 import { PrismaAdapter } from "@next-auth/prisma-adapter"
-import { PrismaClient } from "@prisma/client"
+import prisma from 'prisma/prisma';
 import { type } from 'os';
 
 // when deploying, use NEXTAUTH_URL=https://example.com 
 // When deploying your site set the NEXTAUTH_URL environment variable to the canonical URL of the website.
 
-const prisma = new PrismaClient();
 
 const authOptions: NextAuthOptions = {
   adapter: PrismaAdapter(prisma),
