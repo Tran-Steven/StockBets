@@ -14,7 +14,7 @@ pool.connect()
 .then(
   app.listen(3001, () => {console.log("server is live.")})
 )
-.catch(() => console.log("test"))
+.catch((e) => console.error(e))
 
 pool.query('SELECT NOW()', (err: Error, res: any) => {
   console.log(err, res);
