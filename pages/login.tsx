@@ -4,6 +4,7 @@ import style from "@styles/login.module.css"
 import { useSession } from "next-auth/react"
 import { useRouter } from 'next/router'
 import { useState } from 'react'
+import { signIn } from "next-auth/react";
 
 export default function Login() {
 
@@ -22,14 +23,14 @@ export default function Login() {
         return (
             <div>
                 <Header />
-                <form className={style.form} onSubmit={handleSubmit}>
+                {/* <form className={style.form} onSubmit={handleSubmit}>
                     <h2>Login</h2>
                 <label htmlFor="username">Username</label>
                     <input type="text" id="username" name="username" value={username} required onChange={(e) => setUsername(e.target.value)}/>   
                 <label htmlFor="password">Password</label>
                     <input type="password" id="password" name="password" value={password} required onChange={(e) => setPassword(e.target.value)}/>
                 <button type="submit">Login</button>
-                </form>
+                </form> */}
                 <Copyright />
             </div>
     )} else if (loading) {
