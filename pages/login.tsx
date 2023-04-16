@@ -3,8 +3,8 @@ import Copyright from "@components/Copyright/Copyright"
 import style from "@styles/login.module.css"
 import { useSession } from "next-auth/react"
 import { useRouter } from 'next/router'
-import { useState } from 'react'
-import { signIn } from "next-auth/react";
+import { useEffect, useState } from 'react'
+import MyPage from "./tester"
 
 export default function Login() {
 
@@ -23,6 +23,7 @@ export default function Login() {
         return (
             <div>
                 <Header />
+                <MyPage />
                 {/* <form className={style.form} onSubmit={handleSubmit}>
                     <h2>Login</h2>
                 <label htmlFor="username">Username</label>

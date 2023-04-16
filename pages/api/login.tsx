@@ -20,27 +20,8 @@ export default async function handler(
       },
     });
 
-    // If no user is found, return an error
-    if (!user) {
-      return res.status(401).json({ message: "Invalid username or password" });
-    }
-
-    // Sign in the user with next-auth.js
-    const result = await signIn("credentials", {
-      redirect: false,
-      username,
-      password,
-    });
-
-    // If sign-in fails, return an error
-    if (!result?.ok) {
-      return res.status(401).json({ message: "Invalid username or password" });
-    }
-
-    // If sign-in succeeds, return the user object
-    return res.status(200).json({ user });
-  } catch (error) {
-    console.error(error);
-    return res.status(500).json({ message: "Internal server error" });
   }
-}
+  catch (error) {
+    console.log(error)
+  }
+} 

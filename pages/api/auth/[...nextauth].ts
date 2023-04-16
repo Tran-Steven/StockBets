@@ -94,7 +94,7 @@ const authOptions: NextAuthOptions = {
     }),
   ],
   pages: {
-    signIn: '/register',
+    signIn: '/login',
   }
 };
 

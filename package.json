@@ -8,7 +8,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "devStart": "nodemon sb-backend/server.ts"
   },
   "dependencies": {
     "@nestjs/axios": "^2.0.0",
