@@ -3,16 +3,19 @@ import Copyright from "@components/Copyright/Copyright"
 import style from "@styles/register.module.css"
 import { useState } from 'react';
 import axios from 'axios';
+import { useRouter } from 'next/router'
 
 export default function Register() {
   const [username, setUsername] = useState('')
   const [email, setEmail] = useState('')
   const [isDisabled, setIsDisabled] = useState(false)
   const [password, setPassword] = useState('')
+  const router = useRouter();
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault
+    e.preventDefault()
     setIsDisabled(true)
+    router.push('./account');
     // Handle success or error based on result
   }
     return (
