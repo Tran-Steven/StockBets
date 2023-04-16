@@ -17,6 +17,7 @@ export default async function handler(req : NextApiRequest, res : NextApiRespons
         username,
         email,
         password,
+        // add date here for when acc was made, make sure prisma updates it too!
       },
     });
 
