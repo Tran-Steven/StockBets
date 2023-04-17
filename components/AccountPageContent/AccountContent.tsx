@@ -13,7 +13,6 @@ export interface AccountInfo {
   recentrank: string;
 }
 
-const user = 
 
 // ranks: (1 - 3) Bronze, Silver, Gold, Plat, Diamond, Masters (top 50?)
 
@@ -57,7 +56,6 @@ function getFirstLetter(Username: string) {
 }
 
 export default function AccountContent({username, membersince, lifetimepoints, leagueswon, totalguesses, correctguesses, weeklyrank, peakrank, recentrank}: AccountInfo) {
-
   return (
     <div className={style.parent}>
       <div className={style.mainContent}>
