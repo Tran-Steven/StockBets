@@ -1,16 +1,19 @@
 import style from "@styles/AccountContent.module.css"
+import prisma from "prisma/prisma";
 
 export interface AccountInfo {
-  Username: string;
-  MemberSince: string;
-  LifetimePoints: number;
-  TotalGuesses: number;
-  CorrectGuesses: number;
-  LeaguesWon: number;
-  WeeklyRank: string;
-  PeakRank: string;
-  RecentRank: string;
+  username: string;
+  membersince: string;
+  lifetimepoints: number;
+  totalguesses: number;
+  correctguesses: number;
+  leagueswon: number;
+  weeklyrank: string;
+  peakrank: string;
+  recentrank: string;
 }
+
+const user = 
 
 // ranks: (1 - 3) Bronze, Silver, Gold, Plat, Diamond, Masters (top 50?)
 
@@ -21,8 +24,14 @@ export interface AccountInfo {
 function setDefaultBG(Username : string) {
    const randomColor = Math.floor(Math.random()*16777215).toString(16);
    const defaultHolder = document.getElementById("test");
+   const colorInfo = { PfpColor: "null" }
   if (defaultHolder) {
     defaultHolder.style.backgroundColor = "#" + randomColor;
+    const color = await prisma.accountstats.update ({
+      where: {
+        username: 
+      }
+    })
   }
   // store current color into db for current player
 }
@@ -47,7 +56,7 @@ function getFirstLetter(Username: string) {
   return letter;
 }
 
-export default function AccountContent({Username, MemberSince, LifetimePoints, LeaguesWon, TotalGuesses, CorrectGuesses, WeeklyRank, PeakRank, RecentRank}: AccountInfo) {
+export default function AccountContent({username, membersince, lifetimepoints, leagueswon, totalguesses, correctguesses, weeklyrank, peakrank, recentrank}: AccountInfo) {
 
   return (
     <div className={style.parent}>
@@ -55,29 +64,29 @@ export default function AccountContent({Username, MemberSince, LifetimePoints, L
          {/* <h2>User Info</h2> */}
          <div className={style.playerCard}>
           <div className={style.default} id="test">
-            <button className={style.colorChanger} onClick={() => setDefaultBG(Username)}>
+            <button className={style.colorChanger} onClick={() => setDefaultBG(username)}>
               <p className={style.intial}>{getFirstLetter("Steven")}</p>
             </button>
             {/* <div className={style.colorMessage}>
               <p>Click me to change your profile color!</p>
             </div> */}
           </div>
-          <h1>{Username}StevenTran</h1>
+          <h1>{username}StevenTran</h1>
           {/* maybe for titles too, add this for filler <h3>&#127881; Beta Tester &#127881;</h3> */}
           </div>
           <div className={style.listStyle}>
           <ul className={style.lifetimeInfo}>
-            <li>Member Since: {MemberSince}</li>
-            <li>Lifetime Points: {LifetimePoints}</li>
-            <li>Total Guesses: {TotalGuesses}</li>           
-            <li>Guesses Correct (%) {calculateCorrect(TotalGuesses, CorrectGuesses)}</li>
-            <li>Leagues Won: {LeaguesWon}</li>
+            <li>Member Since: {membersince}</li>
+            <li>Lifetime Points: {lifetimepoints}</li>
+            <li>Total Guesses: {totalguesses}</li>           
+            <li>Guesses Correct (%) {calculateCorrect(totalguesses, correctguesses)}</li>
+            <li>Leagues Won: {leagueswon}</li>
           </ul>
             <div className={style.specTest}>
             <ul className={style.specs}>
-              <li>Weekly Rank {WeeklyRank}</li>
-              <li>Peak Rank {PeakRank}</li>
-              <li>Recent Rank (as of {pastWeekRank()}) {RecentRank}</li>
+              <li>Weekly Rank {weeklyrank}</li>
+              <li>Peak Rank {peakrank}</li>
+              <li>Recent Rank (as of {pastWeekRank()}) {recentrank}</li>
             </ul>
             </div>
           </div>

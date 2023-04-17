@@ -12,6 +12,7 @@ datasource db {
 
 model AccountStats {
   username       String @id @db.VarChar(50)
+  pfpColor       String @db.VarChar(12)
   logincreds_id  Int
   lifetimepoints Int
   totalguesses   Int
