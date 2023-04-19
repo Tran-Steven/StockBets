@@ -28,11 +28,7 @@ export default function Account() {
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify({
-          accountStats.usernamme,
-          email,
-          password
-        })
+        body: JSON.stringify(accountStats)
       });
     }
     getAccountStats();
