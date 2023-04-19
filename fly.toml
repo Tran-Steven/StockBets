@@ -1,0 +1,22 @@
+# fly.toml file generated for stockbets on 2023-04-19T10:50:27-04:00
+
+app = "stockbets"
+primary_region = "iad"
+
+[build]
+  [build.args]
+    NEXT_PUBLIC_EXAMPLE = "Value goes here"
+
+[env]
+  PORT = "8080"
+
+[http_service]
+  internal_port = 8080
+  force_https = true
+
+[checks]
+  [checks.alive]
+    type = "tcp"
+    interval = "15s"
+    timeout = "2s"
+    grace_period = "5s"
