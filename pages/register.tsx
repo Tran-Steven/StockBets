@@ -3,7 +3,7 @@ import Copyright from "@components/Copyright/Copyright"
 import style from "@styles/register.module.css"
 import { useState } from 'react';
 import { useRouter } from 'next/router'
-import prisma from "prisma/prisma";
+
 
 export default function Register() {
   const [username, setUsername] = useState('')
@@ -15,22 +15,27 @@ export default function Register() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setIsDisabled(true)
-    try {
-        const newUser = await prisma.logincreds.create({
-          data: {
-            username,
-            email,
-            password,
-          },
-        })
-        console.log(newUser)
-        router.push('./account');
-        // Handle success or error based on result
-      } catch (error) {
-        console.error(error)
-        // Handle error
-      }
-    // Handle success or error based on result
+    const response = await fetch('/api/register', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        username,
+        email,
+        password
+      })
+    });
+  
+    const data = await response.json();
+  
+    if (response.ok) {
+      router.push('/account');
+    } else {
+      console.error(data);
+      // Handle error
+    }
+    setIsDisabled(false);  // Handle success or error based on result
   }
     return (
         <div>

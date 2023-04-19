@@ -23,29 +23,17 @@ export default function Account() {
 
   useEffect(() => {
     async function getAccountStats() {
-      try {
-        const username = "the username of the current user";
-        const user = await prisma.accountStats.findUnique({
-          where: {
-            username: username,
-          },
-          select: {
-            username: true,
-            membersince: true,
-            lifetimepoints: true,
-            totalguesses: true,
-            correctguesses: true,
-            leagueswon: true,
-            weeklyrank: true,
-            peakrank: true,
-            recentrank: true,
-          },
-        });
-        console.log(user);
-        setAccountStats(user);
-      } catch (error) {
-        console.error(error);
-      }
+      const response = await fetch('/api/register', {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          accountStats.usernamme,
+          email,
+          password
+        })
+      });
     }
     getAccountStats();
   }, []);
