@@ -1,6 +1,6 @@
 .mainContent {
-  width: 65vw;
-  height: 100%;
+  width: 100%;
+  height: 80%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -9,6 +9,7 @@
   margin-top: 5%;
 }
 .mainContainer {
+  overflow-y: hidden;
   height: 100vh;
 }
 .buttonOptions {
@@ -22,6 +23,12 @@
 }
 
 .buttonOptions button {
-  padding: 3% 6.5%;
-  font-size: 1.2em;
+  padding: 2% 3.5%;
+  font-size: 1em;
+  z-index: 2;
+}
+@media (max-width: 400px) {
+  .buttonOptions {
+    margin-bottom: -100rem;
+  }
 }

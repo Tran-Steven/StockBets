@@ -1,6 +1,6 @@
 import styles from "@styles/StockofTheDay.module.css";
 import LoadingInfobar from "../LoadingInfoBar/LoadingInfoBar";
-import LeaderBoard from "@components/LeaderBoard/LeaderBoard";
+// import LeaderBoard from "@components/LeaderBoard/LeaderBoard";
 import f500ticker from "@assets/f500tickers.json";
 import axios from "axios";
 import Random from "@assets/Random";
@@ -29,8 +29,7 @@ export default function StockofTheDay() {
   }
 
   const setRandTicker = function () {
-    setTicker(test);
-  return test
+    setTicker(tickerJSON[Random()].Symbol.valueOf());
   };
 
   async function getStockData() {
@@ -43,7 +42,7 @@ export default function StockofTheDay() {
         "https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=" +
         test +
         "&interval=1min" +
-        `&apikey=${process.env.STOCK_KEY}`;  // ${process.env.STOCK_KEY}
+        `&apikey=${process.env.STOCK_KEY}`;
       axios.get(url).then(function (res) {
         StockData = res;
       });
@@ -59,17 +58,16 @@ export default function StockofTheDay() {
   return (
     <div className={styles.mainContainer}>
       <div className={styles.mainContent}>
+        <div className={styles.buttonOptions}>
+          <button>Buy</button>
+          <button>Sell</button>
+        </div>
         <LoadingInfobar
           StockName={ticker}
           StartingPrice={140}
           CurrentPrice={140}
         />
-        <div className={styles.buttonOptions}>
-          <button>Buy</button>
-          <button>Sell</button>
-        </div>
       </div>
-      <LeaderBoard />
     </div>
   );
 }

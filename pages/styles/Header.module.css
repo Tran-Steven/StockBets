@@ -1,12 +1,11 @@
 .header {
   min-width: 100vw;
-  padding-top: 1em;
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: black;
   color: white;
-  padding: 1rem;
+  padding: 0.3rem;
   border-bottom: white 1px solid;
 }
 
