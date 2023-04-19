@@ -29,8 +29,7 @@ export default function StockofTheDay() {
   }
 
   const setRandTicker = function () {
-    setTicker(test);
-    return test;
+    setTicker(tickerJSON[Random()].Symbol.valueOf());
   };
 
   async function getStockData() {
@@ -43,7 +42,7 @@ export default function StockofTheDay() {
         "https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=" +
         test +
         "&interval=1min" +
-        `&apikey=`; // ${process.env.STOCK_KEY}
+        `&apikey=${process.env.STOCK_KEY}`;
       axios.get(url).then(function (res) {
         StockData = res;
       });

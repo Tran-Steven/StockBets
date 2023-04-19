@@ -111,3 +111,10 @@ Owen Na
 [react-url]: https://reactjs.org/
 [postgresql]: https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white
 [postgresql-url]: https://www.postgresql.org/
+
+## Text Stack
+- TypeScript
+- Next.js
+- Prisma
+- Postgresql
+- NextAuth.js

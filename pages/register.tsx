@@ -2,38 +2,53 @@ import Header from "@components/Header/Header"
 import Copyright from "@components/Copyright/Copyright"
 import style from "@styles/register.module.css"
 import { useState } from 'react';
-import axios from 'axios';
+import { useRouter } from 'next/router'
 
-// function createPost() {
-//     const [email, setEmail] = useState('');
-//     const [password, setPassword] = useState('');
 
-//   function handleSubmit(event: any) {
-//     event.preventDefault();
-//     axios.post('/posts', { email, password })
-//       .then(response => {
-//         console.log(response.data);
-//         // do something with response, like show a success message
-//       })
-//       .catch(error => {
-//         console.error(error);
-//         // handle error, like showing an error message
-//       });
-// }
+export default function Register() {
+  const [username, setUsername] = useState('')
+  const [email, setEmail] = useState('')
+  const [isDisabled, setIsDisabled] = useState(false)
+  const [password, setPassword] = useState('')
+  const router = useRouter();
 
-export default function register() {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    setIsDisabled(true)
+    const response = await fetch('/api/register', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        username,
+        email,
+        password
+      })
+    });
+  
+    const data = await response.json();
+  
+    if (response.ok) {
+      router.push('/account');
+    } else {
+      console.error(data);
+      // Handle error
+    }
+    setIsDisabled(false);  // Handle success or error based on result
+  }
     return (
         <div>
             <Header />
-            <form className={style.form}>
+            <form className={style.form} onSubmit={handleSubmit}>
             <h2>Create an account</h2>
             <label htmlFor="username">Username</label>
-                <input type="text" id="username" name="username" required/> {/* onChange={event => setEmail(event.target.value)} */}
+                <input type="text" id="username" name="username" required value={username} onChange={(e) => setUsername(e.target.value)}/> 
             <label htmlFor="email">Email</label>
-                <input type="email" id="email" name="email" required/>    
+                <input type="email" id="email" name="email" required value={email} onChange={(e) => setEmail(e.target.value)}/>    
             <label htmlFor="password">Password</label>
-                <input type="password" id="password" name="password" required/> {/* onChange={event => setPassword(event.target.value)} */}
-            <button type="submit">Create Account</button>
+                <input type="password" id="password" name="password" required value={password} onChange={(e) => setPassword(e.target.value)}/>
+            <button type="submit" disabled={isDisabled}>Register</button> 
             </form>
             <Copyright />
         </div>

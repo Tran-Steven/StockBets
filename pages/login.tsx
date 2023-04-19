@@ -3,7 +3,8 @@ import Copyright from "@components/Copyright/Copyright"
 import style from "@styles/login.module.css"
 import { useSession } from "next-auth/react"
 import { useRouter } from 'next/router'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import MyPage from "./tester"
 
 export default function Login() {
 
@@ -17,26 +18,31 @@ export default function Login() {
     e.preventDefault();
     }
 
-    if (loading || !session) {
+    // if (loading || !session) {
         if (!session) {
         return (
             <div>
                 <Header />
-                <form className={style.form} onSubmit={handleSubmit}>
+                <MyPage />
+                {/* <form className={style.form} onSubmit={handleSubmit}>
                     <h2>Login</h2>
                 <label htmlFor="username">Username</label>
                     <input type="text" id="username" name="username" value={username} required onChange={(e) => setUsername(e.target.value)}/>   
                 <label htmlFor="password">Password</label>
                     <input type="password" id="password" name="password" value={password} required onChange={(e) => setPassword(e.target.value)}/>
                 <button type="submit">Login</button>
-                </form>
+                </form> */}
                 <Copyright />
             </div>
-    )} else {
+    )} else if (loading) {
+        return (
+            <div>Loading...</div>
+        )
         // loading aninmation???
     }
-} else {
+ else {
         router.push('./account');
+        return null;
     // User is authenticated, redirect to accountStats
 } 
 }
